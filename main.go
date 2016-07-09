@@ -53,7 +53,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		content := result.Content()
 		if content != nil && content.IsMessage && content.ContentType == linebot.ContentTypeText {
 			text, err := content.TextContent()
-			_, err = bot.SendText([]string{content.From}, "對不起!! "+text.Text+" 您撥的電話是空號>>請稍後再撥?! ")
+			_, err = bot.SendText([]string{content.From}, "恭喜您! >> 玩家: "+ text.Text +" << 獲得攻城屍的肝X1 ")
 			if err != nil {
 				log.Println(err)
 			}
